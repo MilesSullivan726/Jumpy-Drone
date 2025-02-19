@@ -22,4 +22,12 @@ public class Projectile : MonoBehaviour
     {
         rb.AddRelativeForce(Vector2.up * Time.deltaTime * speed, ForceMode2D.Impulse);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Button"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
