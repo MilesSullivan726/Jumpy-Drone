@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Button"))
+        if (collision.CompareTag("Button") || collision.CompareTag("Wall") || collision.CompareTag("Ground") || collision.CompareTag("Platform"))
         {
             Destroy(gameObject);
         }
